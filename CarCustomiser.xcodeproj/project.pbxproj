@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074D693525BA1523006C165A /* StarterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D693425BA1523006C165A /* StarterCars.swift */; };
 		077E695125B842F20051622C /* CarCustomiserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E695025B842F20051622C /* CarCustomiserApp.swift */; };
 		077E695325B842F20051622C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E695225B842F20051622C /* ContentView.swift */; };
 		077E695525B842F60051622C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077E695425B842F60051622C /* Assets.xcassets */; };
 		077E695825B842F70051622C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077E695725B842F70051622C /* Preview Assets.xcassets */; };
 		077E696325B842F70051622C /* CarCustomiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E696225B842F70051622C /* CarCustomiserTests.swift */; };
 		077E696E25B842F70051622C /* CarCustomiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E696D25B842F70051622C /* CarCustomiserUITests.swift */; };
+		077E697F25B845730051622C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E697E25B845730051622C /* Car.swift */; };
+		077E698325B845E90051622C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E697E25B845730051622C /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074D693425BA1523006C165A /* StarterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCars.swift; sourceTree = "<group>"; };
 		077E694D25B842F20051622C /* CarCustomiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCustomiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		077E695025B842F20051622C /* CarCustomiserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCustomiserApp.swift; sourceTree = "<group>"; };
 		077E695225B842F20051622C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		077E696925B842F70051622C /* CarCustomiserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarCustomiserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		077E696D25B842F70051622C /* CarCustomiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCustomiserUITests.swift; sourceTree = "<group>"; };
 		077E696F25B842F70051622C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077E697E25B845730051622C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,8 @@
 				077E695425B842F60051622C /* Assets.xcassets */,
 				077E695925B842F70051622C /* Info.plist */,
 				077E695625B842F60051622C /* Preview Content */,
+				077E697E25B845730051622C /* Car.swift */,
+				074D693425BA1523006C165A /* StarterCars.swift */,
 			);
 			path = CarCustomiser;
 			sourceTree = "<group>";
@@ -261,6 +268,8 @@
 			files = (
 				077E695325B842F20051622C /* ContentView.swift in Sources */,
 				077E695125B842F20051622C /* CarCustomiserApp.swift in Sources */,
+				074D693525BA1523006C165A /* StarterCars.swift in Sources */,
+				077E697F25B845730051622C /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077E698325B845E90051622C /* Car.swift in Sources */,
 				077E696325B842F70051622C /* CarCustomiserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
