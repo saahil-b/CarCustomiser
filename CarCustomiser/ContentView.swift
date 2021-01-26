@@ -16,32 +16,31 @@ struct ContentView: View {
     @State private var tiresPackage = false
     @State private var enginePackage = false
     
+    @State private var timeUp = false
+    @State private var remainingTime = 30 {
+        didSet {
+            if remainingTime == 0 {
+                timeUp = true
+            }
+        }
+    }
+    
     let defaultFunds: Int = 1000
     @State private var remainingFunds: Int = 1000
     
     var exhaustPackageDisabled: Bool {
-        if remainingFunds < 500 && exhaustPackage == false {
-            return true
-            
-        } else {
-            return false
-        }
+        return exhaustPackage ? true : remainingFunds < 500 ? true : false
     }
     
     var tiresPackageDisabled: Bool {
-        if remainingFunds < 500 && tiresPackage == false {
-            return true
-        } else {
-            return false
-        }
+        return tiresPackage ? true : remainingFunds < 500 ? true : false
     }
+    
     var enginePackageDisabled: Bool {
-        if remainingFunds < 1000 && enginePackage == false {
-            return true
-        } else {
-            return false
-        }
+        return enginePackage ? true : remainingFunds < 1000 ? true : false
     }
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
@@ -89,6 +88,14 @@ struct ContentView: View {
         )
         
         VStack {
+            Text("\(remainingTime)")
+                .onReceive(timer, perform: { _ in
+                    if self.remainingTime > 0 {
+                        self.remainingTime -= 1
+                    }
+                })
+                .foregroundColor(.purple)
+            
             Form{
                 
                 VStack(alignment: .leading, spacing: 20){
@@ -99,12 +106,13 @@ struct ContentView: View {
                         selectedCar = (selectedCar + 1) % (starterCars.cars.count)
                         resetDisplay()
                     })
+                    .disabled(timeUp)
                 }
             
                 Section {
-                    Toggle("Exhaust Package (500)", isOn: exhaustPackageBinding).disabled(exhaustPackageDisabled)
-                    Toggle("Tires Package (500)", isOn: tiresPackageBinding).disabled(tiresPackageDisabled)
-                    Toggle("Engine Package (1,000)", isOn: enginePackageBinding).disabled(enginePackageDisabled)
+                    Toggle("Exhaust Package (500)", isOn: exhaustPackageBinding).disabled(exhaustPackageDisabled || timeUp)
+                    Toggle("Tires Package (500)", isOn: tiresPackageBinding).disabled(tiresPackageDisabled || timeUp)
+                    Toggle("Engine Package (1,000)", isOn: enginePackageBinding).disabled(enginePackageDisabled || timeUp)
                 }
             }
             
